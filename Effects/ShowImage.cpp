@@ -3,9 +3,10 @@
 #include <Resources/TGAResource.h>
 #include <Resources/ResourceManager.h>
 #include <Resources/ITextureResource.h>
+#include <Renderers/OpenGL/TextureLoader.h> // for forcing loading of textures
 
 using namespace OpenEngine::Resources;
-using namespace OpenEngine::Renderers::OpenGL;
+using namespace OpenEngine;
 
 ShowImage::ShowImage(Viewport* viewport, IEngine& engine, ITextureResourcePtr picture) : PostProcessingEffect(viewport,engine,false) {
     this->picture = picture;
@@ -16,7 +17,7 @@ ShowImage::ShowImage(Viewport* viewport, IEngine& engine, ITextureResourcePtr pi
 
 void ShowImage::Setup() {
     // force loading of texture
-    TextureLoader::LoadTextureResource(picture);
+    Renderers::OpenGL::TextureLoader::LoadTextureResource(picture);
 
     pass1 = AddPass("Effects/ShowImage.frag");
     pass1->BindColorBuffer("colorbuf");

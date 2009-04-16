@@ -5,7 +5,6 @@
 #include <PostProcessing/IPostProcessingPass.h>
 #include <Display/Viewport.h>
 #include <Resources/ITextureResource.h>
-#include <Renderers/OpenGL/TextureLoader.h> // for forcing loading of textures
 #include <Core/IEngine.h>
 
 #include <vector>

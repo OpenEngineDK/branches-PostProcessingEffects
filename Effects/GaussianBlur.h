@@ -4,6 +4,7 @@
 #include <PostProcessing/OpenGL/PostProcessingEffect.h>
 #include <PostProcessing/IPostProcessingPass.h>
 #include <Display/Viewport.h>
+#include <Core/IEngine.h>
 
 #include <vector>
 #include <stdio.h>
@@ -24,7 +25,7 @@ class GaussianBlur : public PostProcessingEffect {
 
   public:
 
-    GaussianBlur(Viewport* viewport);
+    GaussianBlur(Viewport* viewport, IEngine& engine);
     void Setup();
     void PerFrame(const float deltaTime);
 };

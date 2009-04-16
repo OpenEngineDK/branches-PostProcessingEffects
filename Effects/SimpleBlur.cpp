@@ -1,6 +1,6 @@
 #include "SimpleBlur.h"
 
-SimpleBlur::SimpleBlur(Viewport* viewport) : PostProcessingEffect(viewport,false) {
+SimpleBlur::SimpleBlur(Viewport* viewport, IEngine& engine) : PostProcessingEffect(viewport,engine,false) {
     offset.push_back(0.005);
 }
 

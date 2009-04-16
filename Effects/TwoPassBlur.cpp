@@ -1,6 +1,6 @@
 #include "TwoPassBlur.h"
 
-TwoPassBlur::TwoPassBlur(Viewport* viewport) : PostProcessingEffect(viewport,false) {
+TwoPassBlur::TwoPassBlur(Viewport* viewport, IEngine& engine) : PostProcessingEffect(viewport,engine,false) {
 }
 
 void TwoPassBlur::Setup() {

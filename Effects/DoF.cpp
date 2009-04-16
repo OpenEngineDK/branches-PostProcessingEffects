@@ -1,6 +1,6 @@
 #include "DoF.h"
 
-DoF::DoF(Viewport* viewport) : PostProcessingEffect(viewport,true) {
+DoF::DoF(Viewport* viewport, IEngine& engine) : PostProcessingEffect(viewport,engine,true) {
     znear .push_back(10);
     zfar  .push_back(33000);
     zsharp.push_back(500);

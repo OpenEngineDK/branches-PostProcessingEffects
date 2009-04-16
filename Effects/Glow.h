@@ -4,6 +4,7 @@
 #include <PostProcessing/OpenGL/PostProcessingEffect.h>
 #include <PostProcessing/IPostProcessingPass.h>
 #include <Display/Viewport.h>
+#include <Core/IEngine.h>
 
 #include <vector>
 #include <stdio.h>
@@ -25,7 +26,7 @@ class Glow : public PostProcessingEffect {
 
   public:
 
-    Glow(Viewport* viewport);
+    Glow(Viewport* viewport, IEngine& engine);
     void Setup();
     void PerFrame(const float deltaTime);
 };

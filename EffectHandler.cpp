@@ -9,13 +9,13 @@
 
 #include "EffectHandler.h"
 
-#include <Core/IGameEngine.h>
+//#include <Core/IGameEngine.h>
 #include <Math/Vector.h>
 
 namespace OpenEngine {
 namespace Utils {
 
-using OpenEngine::Core::IGameEngine;
+    //using OpenEngine::Core::IGameEngine;
 using OpenEngine::Math::Vector;
 using OpenEngine::Scene::TransformationNode;
 
@@ -29,7 +29,7 @@ EffectHandler::~EffectHandler() {
 }
 
 void EffectHandler::Handle(KeyboardEventArg arg) {
-	if (arg.type != KeyboardEventArg::PRESS) return;
+	if (arg.type != EVENT_PRESS) return;
 	
 	printf("Switching effect on input %i if possible\n", arg.sym);
 

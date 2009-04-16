@@ -4,6 +4,7 @@
 #include <PostProcessing/OpenGL/PostProcessingEffect.h>
 #include <PostProcessing/IPostProcessingPass.h>
 #include <Display/Viewport.h>
+#include <Core/IEngine.h>
 
 #include <vector>
 #include <stdio.h>
@@ -29,7 +30,7 @@ class DoF : public PostProcessingEffect {
 
   public:
 
-    DoF(Viewport* viewport);
+    DoF(Viewport* viewport, IEngine& engine);
     void Setup();
     void PerFrame(const float deltaTime);
 };

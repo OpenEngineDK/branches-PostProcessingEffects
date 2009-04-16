@@ -1,6 +1,6 @@
 #include "Glow.h"
 
-Glow::Glow(Viewport* viewport) : PostProcessingEffect(viewport,false) {
+Glow::Glow(Viewport* viewport, IEngine& engine) : PostProcessingEffect(viewport,engine,false) {
 }
 
 void Glow::Setup() {

@@ -4,6 +4,7 @@
 #include <PostProcessing/OpenGL/PostProcessingEffect.h>
 #include <PostProcessing/IPostProcessingPass.h>
 #include <Display/Viewport.h>
+#include <Core/IEngine.h>
 
 #include <Resources/OpenGL/Texture2D.h>
 
@@ -20,7 +21,7 @@ class MotionBlur : public PostProcessingEffect {
 
   public:
 
-    MotionBlur(Viewport* viewport);
+    MotionBlur(Viewport* viewport, IEngine& engine);
     void Setup();
     void PerFrame(const float deltaTime);
 };

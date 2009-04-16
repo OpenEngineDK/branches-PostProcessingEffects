@@ -1,6 +1,6 @@
 #include "MotionBlur.h"
 
-MotionBlur::MotionBlur(Viewport* viewport) : PostProcessingEffect(viewport,true) {
+MotionBlur::MotionBlur(Viewport* viewport, IEngine& engine) : PostProcessingEffect(viewport,engine,true) {
 }
 
 void MotionBlur::Setup() {

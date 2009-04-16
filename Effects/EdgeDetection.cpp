@@ -1,6 +1,6 @@
 #include "EdgeDetection.h"
 
-EdgeDetection::EdgeDetection(Viewport* viewport) : PostProcessingEffect(viewport,false) {
+EdgeDetection::EdgeDetection(Viewport* viewport, IEngine& engine) : PostProcessingEffect(viewport,engine,false) {
 }
 
 void EdgeDetection::Setup() {

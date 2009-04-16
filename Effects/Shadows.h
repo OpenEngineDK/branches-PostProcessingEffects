@@ -4,6 +4,7 @@
 #include <PostProcessing/OpenGL/PostProcessingEffect.h>
 #include <PostProcessing/IPostProcessingPass.h>
 #include <Display/Viewport.h>
+#include <Core/IEngine.h>
 
 #include <vector>
 #include <stdio.h>
@@ -20,7 +21,7 @@ class Shadows : public PostProcessingEffect {
 
   public:
 
-    Shadows(Viewport* viewport);
+    Shadows(Viewport* viewport, IEngine& engine);
     void Setup();
     void PerFrame(const float deltaTime);
 

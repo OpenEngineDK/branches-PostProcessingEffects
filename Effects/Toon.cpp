@@ -1,6 +1,6 @@
 #include "Toon.h"
 
-Toon::Toon(Viewport* viewport) : PostProcessingEffect(viewport,false) {
+Toon::Toon(Viewport* viewport, IEngine& engine) : PostProcessingEffect(viewport,engine,false) {
 }
 
 void Toon::Setup() {

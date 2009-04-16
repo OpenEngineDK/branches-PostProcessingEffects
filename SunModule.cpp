@@ -9,13 +9,13 @@
 
 #include "SunModule.h"
 
-#include <Core/IGameEngine.h>
+//#include <Core/IGameEngine.h>
 #include <Math/Vector.h>
 
 namespace OpenEngine {
 namespace Utils {
 
-using OpenEngine::Core::IGameEngine;
+    //using OpenEngine::Core::IGameEngine;
 using OpenEngine::Math::Vector;
 using OpenEngine::Scene::TransformationNode;
 

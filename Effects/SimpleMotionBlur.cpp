@@ -1,10 +1,10 @@
 #include "SimpleMotionBlur.h"
 
-SimpleMotionBlur::SimpleMotionBlur(Viewport* viewport) : PostProcessingEffect(viewport,false) {
+SimpleMotionBlur::SimpleMotionBlur(Viewport* viewport, IEngine& engine) : PostProcessingEffect(viewport,engine,false) {
 }
 
 void SimpleMotionBlur::Setup() {
-    for (int i=0; i<numSavedFrames; i++)
+    for (unsigned int i=0; i<numSavedFrames; i++)
 	colorBufferFrames[i] = ITexture2DPtr(new Texture2D(0, 0, TEX_RGBA, TEX_REPEAT, TEX_REPEAT, TEX_LINEAR, TEX_LINEAR));
 
     pass1 = AddPass("Effects/SimpleMotionBlur.frag");
@@ -17,7 +17,7 @@ void SimpleMotionBlur::PerFrame(const float deltaTime) {
 
     // roter colorBufferFrames-array en tak til venstre
     ITexture2DPtr tmp = colorBufferFrames[0];
-    for (int i=0; i<numSavedFrames - 1; i++)
+    for (unsigned int i=0; i<numSavedFrames - 1; i++)
 	colorBufferFrames[i] = colorBufferFrames[i+1];
     colorBufferFrames[numSavedFrames-1] = tmp;
 

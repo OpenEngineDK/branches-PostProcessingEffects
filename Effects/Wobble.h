@@ -6,6 +6,7 @@
 #include <PostProcessing/OpenGL/PostProcessingEffect.h>
 #include <PostProcessing/IPostProcessingPass.h>
 #include <Display/Viewport.h>
+#include <Core/IEngine.h>
 
 #include <vector>
 #include <stdio.h>
@@ -22,7 +23,7 @@ class Wobble : public PostProcessingEffect {
 
   public:
 
-    Wobble(Viewport* viewport) : PostProcessingEffect(viewport,false) {}
+ Wobble(Viewport* viewport, IEngine& engine) : PostProcessingEffect(viewport,engine,false) {}
     void Setup();
     void PerFrame(const float deltaTime);
 };

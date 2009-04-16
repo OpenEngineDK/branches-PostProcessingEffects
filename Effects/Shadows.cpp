@@ -1,6 +1,7 @@
 #include "Shadows.h"
 
-Shadows::Shadows(Viewport* viewport) : PostProcessingEffect(viewport,false) {
+Shadows::Shadows(Viewport* viewport,IEngine& engine)
+    : PostProcessingEffect(viewport,engine,false) {
     lightpos.push_back(0.5);
     lightpos.push_back(0.5);
     lightpos.push_back(-2);

@@ -1,6 +1,6 @@
 #include "VolumetricLightScattering.h"
 
-VolumetricLightScattering::VolumetricLightScattering(Viewport* viewport) : PostProcessingEffect(viewport,false) {
+VolumetricLightScattering::VolumetricLightScattering(Viewport* viewport, IEngine& engine) : PostProcessingEffect(viewport,engine,false) {
     screenlightpos.push_back(0.5);
     screenlightpos.push_back(0.5);
 }

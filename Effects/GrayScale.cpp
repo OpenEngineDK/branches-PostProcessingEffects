@@ -1,6 +1,6 @@
 #include "GrayScale.h"
 
-GrayScale::GrayScale(Viewport* viewport) : PostProcessingEffect(viewport,false) {
+GrayScale::GrayScale(Viewport* viewport, IEngine& engine) : PostProcessingEffect(viewport,engine,false) {
 }
 
 void GrayScale::Setup() {

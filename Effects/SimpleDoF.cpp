@@ -1,6 +1,6 @@
 #include "SimpleDoF.h"
 
-SimpleDoF::SimpleDoF(Viewport* viewport) : PostProcessingEffect(viewport,true) {
+SimpleDoF::SimpleDoF(Viewport* viewport, IEngine& engine) : PostProcessingEffect(viewport,engine,true) {
     znear   .push_back(10);
     zfar    .push_back(33000);
     zsharp  .push_back(500);

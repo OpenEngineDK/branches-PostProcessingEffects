@@ -1,6 +1,6 @@
 #include "Saturate.h"
 
-Saturate::Saturate(Viewport* viewport) : PostProcessingEffect(viewport,false) {
+Saturate::Saturate(Viewport* viewport, IEngine& engine) : PostProcessingEffect(viewport,engine,false) {
 }
 
 void Saturate::Setup() {

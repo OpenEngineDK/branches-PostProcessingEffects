@@ -7,7 +7,7 @@
 using namespace OpenEngine::Resources;
 using namespace OpenEngine::Renderers::OpenGL;
 
-ShowImage::ShowImage(Viewport* viewport, ITextureResourcePtr picture) : PostProcessingEffect(viewport,false) {
+ShowImage::ShowImage(Viewport* viewport, IEngine& engine, ITextureResourcePtr picture) : PostProcessingEffect(viewport,engine,false) {
     this->picture = picture;
     alpha.push_back(1);
     this->cnt = 0;

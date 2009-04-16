@@ -6,6 +6,7 @@
 #include <Display/Viewport.h>
 #include <Resources/ITextureResource.h>
 #include <Renderers/OpenGL/TextureLoader.h> // for forcing loading of textures
+#include <Core/IEngine.h>
 
 #include <vector>
 #include <stdio.h>
@@ -26,7 +27,7 @@ class ShowImage : public PostProcessingEffect {
 
   public:
 
-    ShowImage(Viewport* viewport, ITextureResourcePtr picture);
+    ShowImage(Viewport* viewport, IEngine& engine, ITextureResourcePtr picture);
     void Setup();
     void PerFrame(const float deltaTime);
 

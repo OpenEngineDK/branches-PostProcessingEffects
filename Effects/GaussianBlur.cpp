@@ -1,6 +1,6 @@
 #include "GaussianBlur.h"
 
-GaussianBlur::GaussianBlur(Viewport* viewport) : PostProcessingEffect(viewport,false) {
+GaussianBlur::GaussianBlur(Viewport* viewport, IEngine& engine) : PostProcessingEffect(viewport,engine,false) {
 }
 
 void GaussianBlur::Setup() {

@@ -2,7 +2,7 @@
 
 // clean up, plz
 
-Pixelate::Pixelate(Viewport* viewport) : PostProcessingEffect(viewport,false) {
+Pixelate::Pixelate(Viewport* viewport, IEngine& engine) : PostProcessingEffect(viewport,engine,false) {
     this->viewport = viewport;
     this->xcnt = 0;
     this->ycnt = 0;

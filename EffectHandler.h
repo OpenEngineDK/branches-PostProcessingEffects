@@ -33,12 +33,15 @@ using namespace OpenEngine::PostProcessing;
 class EffectHandler : public IListener<KeyboardEventArg> {
   private:
     vector<IPostProcessingEffect*> fullscreeneffects;
+    vector<std::string> names;
     ShowImage* showImage;
     SunModule* sunModule;
+    void ToggleEffect(unsigned int index);
   public:
     EffectHandler(vector<IPostProcessingEffect*> fullscreeneffects, ShowImage* showImage, SunModule* sunModule);
     ~EffectHandler();
     void Handle(KeyboardEventArg arg);
+    void SetNameList(vector<std::string> list);
 };
 
 } // NS Utils

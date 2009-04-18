@@ -10,7 +10,7 @@
 #ifndef _SUN_MODULE_H_
 #define _SUN_MODULE_H_
 
-#include <Core/IModule.h>
+#include <Core/IListener.h>
 #include <Display/Camera.h>
 #include <Devices/IKeyboard.h>
 #include <Devices/IMouse.h>
@@ -31,7 +31,7 @@ using namespace OpenEngine::PostProcessing;
 /**
  * Camera movement handler
  */
-class SunModule : public IModule {
+class SunModule : public IListener<ProcessEventArg> {
   private:
     VolumetricLightScattering* volumetricLightScattering;
     TransformationNode* sunTransNode;
@@ -40,10 +40,7 @@ class SunModule : public IModule {
   public:
     SunModule(VolumetricLightScattering* volumetricLightScattering, TransformationNode* sunTransNode, Camera* camera);
     ~SunModule();
-    void Initialize();
-    void Deinitialize();
-    bool IsTypeOf(const std::type_info& inf);
-    void Process(const float dt, const float percent);
+    void Handle(ProcessEventArg arg);
     void SetFollowSun(bool followSun);
     bool GetFollowSun();
 };

@@ -29,16 +29,6 @@ SunModule::SunModule(VolumetricLightScattering* volumetricLightScattering, Trans
 SunModule::~SunModule() {
 }
 
-void SunModule::Initialize() {
-}
-
-void SunModule::Deinitialize() {
-}
-
-bool SunModule::IsTypeOf(const std::type_info& inf) {
-    return false;
-}
-
 void SunModule::SetFollowSun(bool followSun) {
     this->followSun = followSun;
 }
@@ -47,15 +37,14 @@ bool SunModule::GetFollowSun() {
     return followSun;
 }
 
-void SunModule::Process(const float dt, const float percent) {
-
+void SunModule::Handle(ProcessEventArg arg) {
     // calc new sun object position
     static float cnt = 0;
 
     float x = cos(cnt) * 100;
     float y = (sin(cnt)+0.5) * 30;
 
-    cnt += 0.001 * dt;
+    cnt += arg.approx;
 
     sunTransNode->SetPosition(Vector<3,float>(0, y, x));
 
@@ -75,9 +64,10 @@ void SunModule::Process(const float dt, const float percent) {
     float py = accPos[1];
     float pz = accPos[2];
 
-    Vector<3, float> globAccPos = Vector<3,float> (vm(0,0)*px + vm(1,0)*py + vm(2,0)*pz + vm(3,0),
-                                                   vm(0,1)*px + vm(1,1)*py + vm(2,1)*pz + vm(3,1),
-                                                   vm(0,2)*px + vm(1,2)*py + vm(2,2)*pz + vm(3,2));
+    Vector<3, float> globAccPos =
+        Vector<3,float> (vm(0,0)*px + vm(1,0)*py + vm(2,0)*pz + vm(3,0),
+                         vm(0,1)*px + vm(1,1)*py + vm(2,1)*pz + vm(3,1),
+                         vm(0,2)*px + vm(1,2)*py + vm(2,2)*pz + vm(3,2));
 
     globAccPos[0] /= globAccPos[2];
     globAccPos[1] /= globAccPos[2];

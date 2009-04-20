@@ -1,6 +1,7 @@
+SET( EXTENSION_NAME "Extensions_PostProcessingEffects")
 
 # Create the extension library
-ADD_LIBRARY(Extensions_PostProcessingEffects
+ADD_LIBRARY(${EXTENSION_NAME}
   # Add all the cpp source files here
   SunModule.cpp
   EffectHandler.cpp
@@ -22,4 +23,8 @@ ADD_LIBRARY(Extensions_PostProcessingEffects
   Effects/ShowImage.cpp
   Effects/SimpleExample.cpp
   Effects/DoF.cpp
+)
+
+TARGET_LINK_LIBRARIES(${EXTENSION_NAME}
+  Extensions_TGAResource
 )
